@@ -1,0 +1,14 @@
+#!/bin/bash
+(
+  source ./.env
+  export PGUSER=$DATABASE_USER
+  export PGPASSWORD=$DATABASE_PASSWORD
+  export PGHOST=$DATABASE_HOST
+  export PGPORT=$DATABASE_PORT
+  [[ $NODE_ENV == "test" ]] &&
+    export DATABASE=$TEST_DATABASE_NAME ||
+    export DATABASE=$DATABASE_NAME
+  psql \
+    -c "DROP DATABASE IF EXISTS $DATABASE;" \
+    -c "CREATE DATABASE $DATABASE;"
+)

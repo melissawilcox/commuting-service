@@ -1,0 +1,13 @@
+#!/bin/bash
+
+MIGRATION_OUTPUT=$(knex migrate:make $1)
+
+MIGRATION_MATCH='Created Migration: (.+)'
+[[ $MIGRATION_OUTPUT =~ $MIGRATION_MATCH ]]
+MIGRATION_FILE=${BASH_REMATCH[1]}
+
+MIGRATION_DATA_FILE=${MIGRATION_FILE/migrations/data}
+touch $MIGRATION_DATA_FILE
+
+echo "Created Migration $MIGRATION_FILE"
+echo "Created Migration Data $MIGRATION_DATA_FILE"

@@ -1,0 +1,15 @@
+#!/bin/bash
+(
+  source ./.env
+  export PGUSER=$DATABASE_USER
+  export PGPASSWORD=$DATABASE_PASSWORD
+  export PGHOST=$DATABASE_HOST
+  export PGPORT=$DATABASE_PORT
+  [[ $NODE_ENV == "test" ]] && \
+   export PGDATABASE=$TEST_DATABASE_NAME || \
+   export PGDATABASE=$DATABASE_NAME
+  psql \
+    -c "DROP SCHEMA public CASCADE;" \
+    -c "CREATE SCHEMA public;" \
+    -c "GRANT ALL ON SCHEMA public TO public;"
+)
