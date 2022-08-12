@@ -28,7 +28,7 @@ export const get = async (ctx) => {
     return;
   }
 
-  ctx.body = element.toJSON();
+  ctx.body = challenges.toJSON();
 };
 
 

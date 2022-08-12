@@ -2,6 +2,8 @@ import Serializer from './../serializers/Serializer.js';
 
 const mapping = {
   challenges: 'challenge',
+  logs: 'log',
+  'commute-types': 'commuteType',
   users: 'user',
 };
 
