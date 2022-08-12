@@ -38,6 +38,7 @@
     "@babel/runtime": "^7.18.9",
     "dotenv": "^16.0.1",
     "http-status-codes": "^2.2.0",
+    "json-api-serializer": "^2.6.6",
     "knex": "^2.2.0",
     "knex-utils": "^5.5.1",
     "koa": "^2.13.4",

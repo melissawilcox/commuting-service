@@ -18,9 +18,7 @@ const parseDate = (value) => value;
 pg.types.setTypeParser(DATE_OID, parseDate);
 
 pg.types.setTypeParser(20, 'text', parseInt);
-console.log('config', {
-  ...knexConfig[config.env],
-})
+
 export default Knex({
   ...knexConfig[config.env],
 });
