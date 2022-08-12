@@ -1,5 +1,6 @@
 import JSONAPISerializer from 'json-api-serializer';
 
+import challengeSerializer from './challengeSerializer.js';
 import userSerializer from './userSerializer.js';
 
 const Serializer = new JSONAPISerializer({
@@ -7,6 +8,7 @@ const Serializer = new JSONAPISerializer({
 });
 
 const serializerArray = [
+  challengeSerializer,
   userSerializer,
 ];
 

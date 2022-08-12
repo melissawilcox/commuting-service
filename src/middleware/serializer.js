@@ -1,6 +1,7 @@
 import Serializer from './../serializers/Serializer.js';
 
 const mapping = {
+  challenges: 'challenge',
   users: 'user',
 };
 

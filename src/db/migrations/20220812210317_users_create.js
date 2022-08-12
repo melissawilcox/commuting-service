@@ -1,5 +1,5 @@
 export const up = async (knex) =>
-  await knex.schema.createTable('users', (table) => {
+  knex.schema.createTable('users', (table) => {
     table
       .uuid('id')
       .primary()
@@ -14,4 +14,4 @@ export const up = async (knex) =>
     table.timestamps(true, true);
   });
 
-export const down = (knex) => await knex.schema.dropTable('users');
+export const down = (knex) => knex.schema.dropTable('users');
